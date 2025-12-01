@@ -1,12 +1,12 @@
 import re
-from numpy import unicode_
+# from numpy import unicode_
 basestring = str
-unicode = unicode_
-try:
-    special_unicode = unicode
-except NameError:
-    class special_unicode(object):
-        pass
+# unicode = unicode_
+# try:
+#     special_unicode = unicode
+# except NameError:
+#     class special_unicode(object):
+#         pass
 try:
     basestring = basestring
 except NameError:
@@ -35,8 +35,8 @@ def string_triplequote_repr(s):
 def pretty_string(s, embedded, current_line, uni_lit=False, min_trip_str=20,
     max_line=100):
     default = repr(s)
-    if isinstance(s, special_unicode) or not isinstance(s, basestring):
-        return default
+    # if isinstance(s, special_unicode) or not isinstance(s, basestring):
+    #     return default
     if uni_lit and isinstance(s, bytes):
         return 'b' + default
     len_s = len(default)
